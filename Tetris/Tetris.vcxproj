@@ -133,7 +133,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\board\board.cpp" />
+    <ClCompile Include="src\board\pieces.cpp" />
     <ClCompile Include="src\Tetris.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\board\board.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
