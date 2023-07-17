@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Tetris/res/Fonts/Century.TTF
+/Tetris/res/Fonts/Century.TTF
