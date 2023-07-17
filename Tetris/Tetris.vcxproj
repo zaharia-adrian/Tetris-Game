@@ -134,11 +134,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\board\board.cpp" />
-    <ClCompile Include="src\board\pieces.cpp" />
+    <ClCompile Include="src\board\move_rotate.cpp" />
     <ClCompile Include="src\Tetris.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\board\board.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="res\Fonts\Century.TTF" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

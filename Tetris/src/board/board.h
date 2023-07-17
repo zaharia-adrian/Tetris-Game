@@ -1,27 +1,41 @@
 #include <iostream>
+#include<random>
+
 #include <SFML/Graphics.hpp>
-#include<cstdlib>
+#include <thread>
 using namespace std;
 
-const float margin_top = 100;
+const float margin_top = 50;
 const float margin_left = 200;
-const float square_size = 50.f;
-const float gap = 7.f;
+const float square_size = 25.f;
+const float gap = 5.f;
 
-const int nr_row = 15;
-const int nr_col = 14;
+const int nr_row = 30;
+const int nr_col = 20;
 
 
 class Board {
-	int board[100][100];
+	int score;
+	int period;
+	bool playing;
 
-public:
-	void draw_board(sf::RenderWindow& window);
+	int piece,orientation;
+	int offset_row, offset_col;
+	int board[nr_row+1][nr_col+1];
 
 	void move_row(int row, int nr_rows);
-
 	bool row_is_full(int row);
+	void verify();
+public:
+	Board();
 
-	void new_piece();
+	void draw_board(sf::RenderWindow& window,sf::Font);
 
+	void play();
+
+	void move_rigth();
+	void move_left();
+	void rotate_ccw();
+	void rotate_cw();
+	void drop();
 };

@@ -21,7 +21,7 @@
     <ClCompile Include="src\board\board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\board\pieces.cpp">
+    <ClCompile Include="src\board\move_rotate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,5 +29,8 @@
     <ClInclude Include="src\board\board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="res\Fonts\Century.TTF" />
   </ItemGroup>
 </Project>
