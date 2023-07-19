@@ -1,215 +1,5 @@
 #include "board.h"
 
-int Pieces_[8][4][4][4] = {
-		{/// **0th piece in all 4 forms
-			{
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-		},
-		{/// 1st piece in all 4 forms
-			{
-				{0,0,0,0},
-				{0,1,1,0},
-				{0,1,1,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,1,1,0},
-				{0,1,1,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,1,1,0},
-				{0,1,1,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,1,1,0},
-				{0,1,1,0},
-				{0,0,0,0}
-			},
-		},
-		{/// 2nd piece in all 4 forms
-			{
-				{0,0,0,0},
-				{1,1,1,1},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,1,0},
-				{0,0,1,0},
-				{0,0,1,0},
-				{0,0,1,0}
-			},
-			{
-				{0,0,0,0},
-				{0,0,0,0},
-				{1,1,1,1},
-				{0,0,0,0}
-			},
-			{
-				{0,1,0,0},
-				{0,1,0,0},
-				{0,1,0,0},
-				{0,1,0,0}
-			},
-		},
-		{/// 3th piece in all 4 forms
-			{
-				{1,0,0,0},
-				{1,1,1,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,1,1,0},
-				{0,1,0,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{1,1,1,0},
-				{0,0,1,0},
-				{0,0,0,0}
-			},
-			{
-				{0,1,0,0},
-				{0,1,0,0},
-				{1,1,0,0},
-				{0,0,0,0}
-			},
-		},
-		{///4th piece with all 4 forms
-			{
-				{0,0,1,0},
-				{1,1,1,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,1,0,0},
-				{0,1,0,0},
-				{0,1,1,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{1,1,1,0},
-				{1,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{1,1,0,0},
-				{0,1,0,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-		},
-		{///5th piece with all 4 forms
-			{
-				{0,1,0,0},
-				{1,1,1,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,1,0,0},
-				{0,1,1,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{1,1,1,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,1,0,0},
-				{1,1,0,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-		},
-		{///6th piece with all 4 forms
-			{
-				{1,1,0,0},
-				{0,1,1,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,1,0},
-				{0,1,1,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,1,1,0},
-				{1,1,0,0},
-				{0,0,0,0}
-			},
-			{
-				{1,0,0,0},
-				{1,1,0,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-		},
-		{ ///7th piece with all its 4 forms 
-			{
-				{0,1,1,0},
-				{1,1,0,0},
-				{0,0,0,0},
-				{0,0,0,0}
-			},
-			{
-				{0,1,0,0},
-				{0,1,1,0},
-				{0,0,1,0},
-				{0,0,0,0}
-			},
-			{
-				{0,0,0,0},
-				{0,1,1,0},
-				{1,1,0,0},
-				{0,0,0,0}
-			},
-			{
-				{1,0,0,0},
-				{1,1,0,0},
-				{0,1,0,0},
-				{0,0,0,0}
-			},
-		},
-};
 int offset[8][4][4] = {
 	{},
 	{///1st piece
@@ -261,9 +51,9 @@ void Board::move_left() {
 		bool ok = true;
 		for (int row = 0; row < 4; row++)
 			for (int col = 0; col < 4; col++)
-				if (Pieces_[piece][orientation][row][col] && board[offset_row + row + 1][offset_col + col])
+				if (Pieces[piece][orientation][row][col] && board[offset_row + row + 1][offset_col + col])
 					ok = false;
-		if(ok)
+		if (ok)
 			offset_col--;
 	}
 }
@@ -273,7 +63,7 @@ void Board::move_rigth() {
 		bool ok = true;
 		for (int row = 0; row < 4; row++)
 			for (int col = 0; col < 4; col++)
-				if (Pieces_[piece][orientation][row][col] && board[offset_row + row + 1][offset_col + col+2])
+				if (Pieces[piece][orientation][row][col] && board[offset_row + row + 1][offset_col + col + 2])
 					ok = false;
 		if (ok)
 			offset_col++;
@@ -282,13 +72,37 @@ void Board::move_rigth() {
 }
 
 void Board::rotate_cw() {
-	orientation = (orientation + 1) % 4;
+	int new_orientation = (orientation + 1) % 4;
+	bool ok = true;
+	for (int row = 0; row < 4; row++) 
+		for (int col = 0; col < 4; col++) 
+			if (Pieces[piece][new_orientation][row][col])
+				if (row + offset_row + 1 > nr_row ||
+					row + offset_row + 1 < 1 ||
+					col + offset_col + 1 > nr_col ||
+					col + offset_col + 1 < 1 ||
+					board[row+offset_row+1][col+offset_col+1]
+					) ok = false;
+	if (ok)
+		orientation = new_orientation;
 }
 
 void Board::rotate_ccw() {
-	orientation = (orientation - 1 + 4) % 4;
+	int new_orientation = (orientation - 1 + 4) % 4;
+	bool ok = true;
+	for (int row = 0; row < 4; row++)
+		for (int col = 0; col < 4; col++)
+			if (Pieces[piece][new_orientation][row][col])
+				if (row + offset_row + 1 > nr_row ||
+					row + offset_row + 1 < 1 ||
+					col + offset_col + 1 > nr_col ||
+					col + offset_col + 1 < 1 ||
+					board[row + offset_row + 1][col + offset_col + 1]
+					) ok = false;
+	if (ok)
+		orientation = new_orientation;
 }
 
 void Board::drop() {
-	period=0;
+	period = 0;
 }

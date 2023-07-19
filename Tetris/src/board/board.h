@@ -13,6 +13,9 @@ const float gap = 5.f;
 const int nr_row = 30;
 const int nr_col = 20;
 
+extern int Pieces[8][4][4][4];
+extern int offset[8][4][4];
+
 
 class Board {
 	int score;

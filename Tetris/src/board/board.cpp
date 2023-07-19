@@ -220,52 +220,6 @@ int colors[8][4] = {
 	{153,255,153},
 	{255,51,255}
 };
-int offset_[8][4][4] = {
-	{},
-	{///1st piece
-		{1,1,1,1},
-		{1,1,1,1},
-		{1,1,1,1},
-		{1,1,1,1}
-	},
-	{///2nd piece
-		{1,0,2,0},
-		{0,1,0,2},
-		{2,0,1,0},
-		{0,2,0,1}
-	},
-	{///3th piece
-		{0,1,2,0},
-		{0,1,1,1},
-		{1,1,1,0},
-		{0,2,1,0}
-	},
-	{///4th piece
-		{0,1,2,0},
-		{0,1,1,1},
-		{1,1,1,0},
-		{0,2,1,0}
-	},
-	{///5th piece
-		{0,1,2,0},
-		{0,1,1,1},
-		{1,1,1,0},
-		{0,2,1,0}
-	},
-	{///6th piece
-		{0,1,2,0},
-		{0,1,1,1},
-		{1,1,1,0},
-		{0,2,1,0}
-	},
-	{///7th piece
-		{0,1,2,0},
-		{0,1,1,1},
-		{1,1,1,0},
-		{0,2,1,0}
-	}
-};
-
 
 Board::Board() {
 	playing = true;
@@ -274,7 +228,6 @@ Board::Board() {
 		for (int col = 0; col <= nr_col; col++)
 			board[row][col] = 0;
 
-	period = 500;
 	piece = orientation = 0;
 	offset_col = offset_row = 0;
 	score = 0;
@@ -286,11 +239,11 @@ void Board::play() {
 	mt19937 gen(rd());
 	uniform_int_distribution<int> dis(1, 7);
 	piece = dis(gen);
-	period = 100;
+	period = 1000;
 
 	orientation = 0;
 	offset_col = (nr_col - 4) / 2;
-	offset_row = 0 - offset_[piece][orientation][0];
+	offset_row = 0 - offset[piece][orientation][0];
 
 	///verifying if still playing or game over
 	for (int row = 0; row < 4; row++)
@@ -311,7 +264,7 @@ void Board::play() {
 						board[row + offset_row + 2][col + offset_col+1])
 						down = false;
 
-			if (offset_row + 4 - offset_[piece][orientation][(2+orientation)%4] >= nr_row)
+			if (offset_row + 4 - offset[piece][orientation][(2+orientation)%4] >= nr_row)
 				down = false;
 			if (down)
 				offset_row++;
